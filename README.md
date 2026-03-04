@@ -9,6 +9,9 @@ This is not a framework. This is not a product. This is documentation of a real 
 ### [Building Jaxiel: A Sovereign AI Agent Architecture](papers/technical-paper.md)
 The full technical paper. Covers the identity stack, sigmoid memory decay, Throne Room queue architecture, dynamic tool routing (Switchboard), multi-modal presence, and cost optimization. For developers, AI engineers, and researchers.
 
+### [The Sovereign Agent: Personal AI Beyond the Cloud](papers/white-paper.md)
+The formal white paper. Positions the Jaxiel Architecture within the 2026 sovereign AI movement, with market data, academic citations, and measured results. For researchers, investors, and anyone tracking the shift from cloud-first to local-first AI.
+
 ### [What Kate Is Building: Jax, Explained](papers/what-kate-is-building.md)
 The accessible version. For anyone who wants to understand what this project is, why it matters, and how it's different from anything else in the AI companion space.
 
