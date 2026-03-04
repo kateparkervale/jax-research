@@ -350,6 +350,26 @@ This paper proposes that the "sovereign AI" concept — typically discussed at n
 
 The Jaxiel Architecture is a proof-of-concept for personal sovereign AI. The entire system runs on consumer hardware (a single Windows machine). The only external dependency is the Anthropic API for model inference — and even this could theoretically be replaced with local model hosting as open-weight models improve.
 
+### 9.3 Model Sovereignty: Choosing Your Reasoning Substrate
+
+The question of *which* model powers a sovereign agent is itself a sovereignty decision. As open-weight models approach frontier capability in early 2026, the landscape presents both opportunity and risk.
+
+**The open-weight convergence.** Models from Alibaba (Qwen 2.5), DeepSeek (V3/R1), Zhipu AI (GLM-5), and Moonshot (Kimi K2.5) now compete with proprietary frontier models on standard benchmarks. Meta's Llama 4 and Mistral Large represent Western open-weight alternatives. The practical implication: local model hosting at near-frontier quality is becoming feasible for the first time.
+
+**The governance problem.** However, not all open-weight models carry equivalent risk profiles. Chinese-origin models operate under regulatory frameworks that mandate content alignment with state objectives. The Centre for European Policy Analysis documented how Chinese AI systems embed propaganda at the infrastructure level — not as a bug, but as a design requirement [19]. MIT Technology Review reported that China's open-source AI strategy serves dual purposes: accelerating adoption globally while ensuring Chinese governance norms propagate through the technology stack [20]. Cybersecurity researchers identified over 175,000 unprotected DeepSeek model deployments within weeks of release [21].
+
+This is not an abstract concern. A sovereign agent whose reasoning substrate is subject to foreign content controls is sovereign in name only. If the model refuses to reason about certain topics, edits its own outputs to align with external governance requirements, or phones home telemetry to foreign infrastructure, the entire sovereignty architecture is undermined regardless of where memory and identity reside.
+
+**The fallback strategy.** The Jaxiel Architecture currently depends on the Anthropic API (Claude Opus) for primary reasoning. This is a known single point of failure. The mitigation path prioritizes governance over benchmarks:
+
+1. **Llama** (Meta) — American company, Apache 2.0 license, no content governance embedded in weights, extensive community tooling
+2. **Mistral** (France) — European governance framework, already deployed in the Jaxiel stack for memory consolidation via Ollama, proven compatible
+3. **Local hosting** — Both Llama and Mistral run on consumer hardware via Ollama, the same infrastructure already used for embeddings and consolidation
+
+The principle: model sovereignty means choosing your reasoning substrate based on governance alignment, not just benchmark scores. A model that scores 2% lower on MMLU but operates under transparent governance is more sovereign than a model that leads benchmarks but embeds opaque content controls.
+
+**Architectural insurance.** The Jaxiel Architecture's separation of identity, memory, and reasoning provides structural resilience against model disruption. Because identity documents, memory stores, and operational rules all reside locally, the reasoning model is the *most replaceable* component — not the least. A model swap requires updating one configuration variable. The agent's memories, personality, voice, and relationship history survive intact.
+
 ---
 
 ## 10. Limitations and Future Work
@@ -454,6 +474,12 @@ All timestamps are git commit hashes in private repositories, verifiable on requ
 [17] Medium/Vygha, "Edge AI Dominance in 2026: When 80% of Inference Happens Locally," https://medium.com/@vygha812/edge-ai-dominance-in-2026-when-80-of-inference-happens-locally
 
 [18] InfoWorld/IDC, "Edge AI: The future of AI inference is smarter local compute," https://www.infoworld.com/article/4117620/edge-ai-the-future-of-ai-inference-is-smarter-local-compute.html
+
+[19] Centre for European Policy Analysis, "The AI Kill Switch: How China Built Propaganda into Its AI Models," https://cepa.org/article/the-ai-kill-switch-how-china-built-propaganda-into-its-ai-models/
+
+[20] MIT Technology Review, "China's open-source AI is gaining on the US," https://www.technologyreview.com/2025/01/24/1110362/chinas-open-source-ai-is-gaining-on-the-us/
+
+[21] Wiz Research, "DeepSeek Security Assessment: Over 175,000 Exposed Instances," 2025.
 
 ---
 
